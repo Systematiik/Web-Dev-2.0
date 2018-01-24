@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<!--Applying styles using classes
+
+styling ids versus classes are that ids use hashes (#) and classes use full-stops or period (.)
+
+ids: Should only be used once per page. Unique within a page.
+
+Classes: Can be used more than once.
+
+divs are used to group tags together.
+
+float style is used to float divs or ids to parts of the page
+
+Relative positioning means it will place a div where it relatively is
+
+opacity changes the opacity of the divv -->
+
+<html>
+	
+	<head>
+
+		<title>Web Dev 2.0 with CSS</title>
+
+			<style type="text/css">
+
+
+				.red{
+					color:red;
+				}
+
+				.large{
+					font-size:200%;
+				}
+
+				.underlined{
+					text-decoration:underline;
+				}
+
+				.clear-float{
+						clear:both;
+					}
+
+					#green{
+						color:green;
+					}
+
+
+					#first-section{
+						color:blue;
+						background-color:#CEF6CE;
+						width:200px;
+
+						/*A fixed position will keep a div in a spot forever*/
+						position:fixed;
+
+						/*Absolute puts the one position on top of everything else
+						position:absolute;
+						left:500px;
+						top:200px;*/
+
+						/*position:relative;
+						left:200px;
+						top:100px;
+						z-index:2;*/
+					}
+
+					#second-section{
+						background-color:#CE63CE;
+						width:400px;
+						height:5000px;
+
+
+						/*position:relative;
+						left:100px;
+						top:-100px;
+						z-index:1;
+						opacity:0.5;*/
+					}
+
+
+			</style>
+
+	</head>
+
+	<body>
+
+		<p><a href="htmlcolorcodes.com">Click here for alpha numerical colour codes</a></p>
+
+		<div id="first-section">
+
+			<p>I like basketball. - Imran Qureshi 2018</p>
+
+			<p>Poo-poo train, we ain't talking 'bout no gravity. - Jovan Borkovic</p>
+
+		</div>
+
+		<div id="second-section">
+
+			<p id="green">Your mom is fat. - Tony Ferski <span class="underlined">(Maybe not)</span></p>
+
+			<h1 class="red">CSS is cool.</h1>
+		</div>
+
+		<div class="clear-float"></div>
+
+		<p>Your gay. - Juan Manuel Vallecilla Viveros</p>
+
+	</body>
+
+</html>
