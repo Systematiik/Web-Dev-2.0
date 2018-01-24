@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<!--REMINDER: For $39.00 USD, you can take the HTML Level 1 certification exam to achieve the credentials. Website will be provided at the end of the code.-->
+
+<html>
+
+<!-- What is HTML? HTML by definition is Hypertext Markup Language, a standardized system for tagging text files to achieve font, colour, graphic, and hyperlink effects on World Wide Web pages. -->
+	
+	<head>
+		<title> Web Dev 2.0 Webpage</title>
+
+
+	</head>
+		<body>
+
+			<!--Header 1 and 2 tags are easily distinguishable on google -->
+			<p id="top"></p>
+			<p><a href=#bottom>Click here to go to the bottom of the page.</a></p>
+
+			<h1>This is on header tags!</h1>
+			<h2>This is quite a big header!</h2>
+			<h3>This is an h3 header!</h3>
+			<h4>This is an h4 header!</h4>
+			<h5>This is an h5 header!</h5>
+			<h6>This is an h6 header!</h6>
+			<h7>This is NOT an h7 header!</h7>
+
+			<hr>
+			<!--Using paragraph tags creates line breaks. 
+			<br> creates line breaks within a sentence
+			<b> and <strong> with the following closing tag bolds text
+			<em> makes text itatlic
+			<u> and <ins> underlines text
+			<sup> superscripts text
+			<sub> subscripts text 
+			<del> strikes text
+			<hr> inserts a horizontal line. -->
+
+			<p>Here is some <b>bold</b> text.</p>
+			<p>Here is <em>italic</em> text.</p>
+			<p>Here is soome <u>underlined</u> text.<br> with a line break.</p>
+			<p>Here is <sup>superscripted</sup> text.</p>
+			<p>Here is <sub>subscripted</sub> text. </p>
+			<p>Here is some <del>deleted</del> text. </p>
+
+			<hr>
+
+			<!--The tag ul creates an unordered (bulleted) list and li is used to put items in the list-->
+
+			<ul>
+					<li><strong>Jeremy</strong></li>
+					<li><em>Sulman</em></li>
+					<li><del>Imran</del></li>
+					<li><ins>Abu</ins></li>
+					<li><sup>Khalil</sup></li>
+			</ul>
+			
+			<!--The tag ol creates an ordered (numbered) list and li is used to put items in the list
+
+				Using start will give the ordered list a number to start on and will increment
+
+				Using reversed will give the ordered list a number to start on and will decrement
+
+				Using type will let you change the list's ordering category. Example, instead of normal numberss you can change them into roman numerals or letters (Capital or lower case.) -->
+
+			<ol type="A">
+
+					<li><strong>Jeremy</strong></li>
+					<li><em>Sulman</em></li>
+					<li><del>Imran</del></li>
+					<li><ins>Abu</ins></li>
+					<li><sup>Kha</sup><sub>lil</sub></li>
+
+			</ol>
+
+			<hr>
+
+			<!--Using src in for img will look into the local folder for the image being called. 
+
+			width: Changes the width of the picture
+
+			height: Changes the heighth of the picture
+
+			align: Changes the position of the image depending on where you want it. Example: right, left (You can only align images to the top, bottom or center in css. This function is not supported in HTML 5)
+
+			Align also wraps text and everything else with it.
+
+			-->
+
+			<img src="squirrel.jpg" width="300" height="250">
+			<p>This is a picture of a squirrel requested by, <b><em>sulman</em></b>.</p>
+
+			<img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTygKht5v2mTD5V343X9okM43wLEmMF-3jTHY7PefBgvWsGTzJ5"" >
+			<p>This is a picture of a monkey requested by, <b><em>sulman</em></b>.</p>
+
+			<hr>
+
+			<!--The form tag is used to create different types of optinos that a user can use to input their name, select an item through choices, etc...
+
+			Use input to choose the type of option you want to use. Example: text:  textbox
+					 checkbox: checkbox
+					 radio: radio button 
+					 submit: submit button
+
+			If you want to include a drop down box you use, select.
+				With the tags option (and closed) to input items in the drop down menu.
+
+			You can give each option values by using value. This way you can code each option specifically by calling it's value.-->
+
+			<form>
+
+				<p>Username: <input type="text" placeholder="Your Username"></p>
+
+				<p>Stay logged in: <input type="checkbox" checked></p>
+
+				<p>Under 18<input type="radio" name="age" value="u18"></p>
+				<p>Over 18<input type="radio" name="age" value="o18"></p>
+
+				<p>Favourite Food: <select>
+
+					<option>Pizza</option>
+					<option selected>Ice Cream</option>
+					<option>Sandwiches</option>
+					<option>Soup</option>
+
+				</select></p>
+
+				<p><input type="submit" value="Click me!"></p>
+
+				<hr>
+
+				<!--The table tag can be used to create tables.
+
+				The <thead> tag creates a table head (table titles)
+
+				The <tbody> tag creates the content within a table
+
+				The <tr> tag inserts a row and a <td> tag inserts the information inside the row. -->
+
+				<table>
+
+					<thead>
+
+						<tr>
+							<th>Name</th>
+							<th>Favourite<br>Colour</th>
+						</tr>
+
+					</thead>
+
+					<tbody>
+
+						<tr>
+							<td>Rob</td>
+							<td>Green</td>
+						</tr>
+
+						<tr>
+							<td>Imran</td>
+							<td>Red</td>
+						</tr>
+
+						<tr>
+							<td>Sulman</td>
+							<td>Blue</td>
+						</tr>
+
+					</tbody>
+
+				</table>
+
+				<hr>
+
+				<!--Links are used to access webpages off the internet by giving the user the option
+
+					Use <a href> to link web-links and local html files-->
+
+				<!--id tags are used to point to a style in a style sheet, and by javascript to manipulate the element with the specific id.
+
+					id tag was used at the saying, "Click here to get back to the top, the id tag was initialized at the top of the html body code where the begin of the webpage is found-->
+
+				<p><a href ="http://www.google.ca">Click here to access google.</a></p>
+
+				<p><a href="https://soundcloud.com/espionatik"><img src="espion.jpg" width="200" height="200"></a></p>
+				<p>This photo leads you to the best edm producer ever.</p>
+
+				<p><a href="helloworld.html">Hello World!</a></p>
+				<p>Click above to access the hello world file within your folder.</p>
+
+				<hr>
+
+				<p><a href=#top>Click here to get back to the top.</a></p>
+
+				<hr>
+
+				<!--Entities are codes specific to symbols and signs such as an ampersand or the greater than or less than sign.
+
+					Most commonly used to add citations to your websites.-->
+
+				&lt;a href="http://google.com"&gt;
+
+				<hr>
+
+				<!--iFrames allows including content from other websites on to yours. With the acception of allowing iframes from other sites. 
+
+					Embedding is the option if you are to look for sites that offer iframes. Example: soundcloud or youtube videos.
+
+					Including a frameborder with a value of 0 removes the random border included with the iframe created from a local source.-->
+
+				<iframe src="helloworld.html"</iframe>
+
+				<iframe src="helloworld.html" frameborder=0></iframe>
+
+				<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/320396063&amp;color=%2398ceca&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"></iframe>
+
+				<hr>
+
+				<p><a href="http://completewebdevelopercourse.com/content/furtherreading/Reference%201%20-%20HTML%20Tag%20Reference.pdf">HTML Tag Reference Provided by the intructor.</a></p>
+
+				<hr>
+
+				<p><a href="https://www.the-cca.org/html-level-1/">Click here to do the CCA HTML Level 1 exam.</a></p>
+
+				<hr>
+
+				<p><a href=#top>Click here to get back to the top.</a></p>
+
+				<p id ="bottom"></p>
+		</body>
+</html>
