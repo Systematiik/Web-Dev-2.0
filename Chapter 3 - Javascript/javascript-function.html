@@ -1,0 +1,71 @@
+<!doctype html>
+
+<meta charset="UTF-8">
+
+<!--The difference between this guessing game and the original js. How many fingers, is that you have one guess and the code will run your guess until it is correct. There will be a counter provided to reveal the number of tries it took the code to guess it right-->
+
+<html>
+	
+	<head>
+
+		<title>Javascript Functions</title>
+
+	</head>
+
+		<body><p class="colorText"><b><u>*How many fingers am I holding up? (While 2<sup>nd</sup> Edition)</u>*</b></p>
+
+				<select id="userInput">
+					<!--<option disabled selected value style="display:none"></option>-->
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+				</select>
+
+				<button id="checkAnswer">Check</button>
+
+				<p class="colorText">Restart game?</p>
+				<button id="refreshPage"><b>Reload Page</b></button>
+
+					<script type="text/javascript">
+
+						function doAGuess(correctAnswer){
+							var randomInt = (Math.floor(Math.random() * 5) + 1);
+
+							if(randomInt == correctAnswer){
+								return(true);
+							} else {
+								return(false);
+							}
+						}
+
+							document.getElementsByClassName("colorText")[0].style.color = "red";
+							document.getElementsByClassName("colorText")[1].style.color = "green";
+
+							document.getElementById("checkAnswer").onclick = function(){
+
+								var userGuess = document.getElementById("userInput").value;
+								var numberOfGuesses = 1;
+								var gotIt = false;
+
+									while(gotIt == false){
+
+										if(doAGuess(userGuess) == true){
+											gotIt = true;
+											alert("You are correct! It took you " + numberOfGuesses + " tries.");
+										} else {
+											numberOfGuesses++;
+										}
+									}
+								//randomInt = Math.floor(Math.random() * 5) + 1;
+							}
+
+							document.getElementById("refreshPage").onclick = function(){
+								location.reload();
+							}
+				</script>
+
+		</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+
+<meta charset="UTF-8">
+
+<html>
+	
+	<head>
+
+		<title>Javascript How Many Fingers?</title>
+
+	</head>
+
+		<body>
+				<p class="colorText"><b>*How many fingers am I holding up?*</b></p>
+
+				<input type="text" id="userInput" placeholder="Choose a Number"></input>
+
+				<button id="checkAnswer">Check</button>
+
+				<p class="colorText">Restart game?</p>
+				<button id="refreshPage"><b>Reload Page</b></button>
+
+					<script type="text/javascript">
+
+						var randomInt = (Math.floor(Math.random() * 5) + 1);
+
+						var counter = 0;
+
+						document.getElementsByClassName("colorText")[0].style.color = "grey";
+						document.getElementsByClassName("colorText")[1].style.color = "grey";
+
+						document.getElementById("checkAnswer").onclick = function(){
+
+							var userGuess = document.getElementById("userInput").value;
+
+								if(userGuess == randomInt){
+									alert("You are correct!");
+								} else {
+									alert("You are incorrect. Try Again! The answer was " + randomInt + ".");
+								}
+
+							randomInt = Math.floor(Math.random() * 5) + 1;
+						}
+
+						document.getElementById("refreshPage").onclick = function(){
+							location.reload();
+						}
+
+					</script>
+
+		</body>
+
+</html>

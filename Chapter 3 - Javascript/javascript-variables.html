@@ -1,0 +1,34 @@
+<!doctype html>
+
+
+
+<html>
+	
+	<head>
+
+		<title>Javascript Variables</title>
+
+	</head>
+
+		<body>
+
+			<input type = "text" id="user_input">
+
+			<button id="text_changer">Change the text!</button>
+
+			<p id="replaced_text">This is arbitrary text that needs to be changed.</p>
+				
+				<script type="text/javascript">
+
+					document.getElementById("text_changer").onclick = function(){
+
+						var textEntered = document.getElementById("user_input").value;
+						
+						document.getElementById("replaced_text").innerHTML = textEntered;
+					}
+
+				</script>
+
+		</body>
+
+</html>

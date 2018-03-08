@@ -1,0 +1,60 @@
+<!doctype html>
+
+
+
+<html>
+	
+	<head>
+
+		<title>Javascript Styles</title>
+
+	</head>
+
+		<body>
+
+				<p id="text">Hello World!</p>
+
+
+					<button id="change_button">Change Text</button>
+
+				<p id="second_text">Javascript is ...</p>
+
+					<button id="second_change_button">Append Text</button>
+
+				<p id="no_text"></p>
+
+					<button id="new_text_button">Create Text</button>
+
+				<p id="style_text">Style this text</p>
+
+					<button id="style_button">Style Text</button>
+
+				<script type="text/javascript">
+
+					//document: get something within the document
+					//getElementById: get element by Id
+					//"text": the id we want
+					//innerHTML: happens to be hello world, and then changed to "Hello Jeremy!"
+
+					document.getElementById("change_button").onclick = function(){
+						document.getElementById("text").innerHTML = "Hello Jeremy!";
+					}
+
+					document.getElementById("second_change_button").onclick = function(){
+						document.getElementById("second_text").innerHTML = "I think " + document.getElementById("second_text").innerHTML + " awesome!";
+					}
+
+					document.getElementById("new_text_button").onclick = function(){
+						document.getElementById("no_text").innerHTML = "<h1>POOF! Text</h1>";
+					}
+
+					document.getElementById("style_button").onclick = function(){
+						document.getElementById("style_text").style.color = "red";
+						document.getElementById("style_text").style.fontSize = "50px";
+					}
+
+				</script>
+
+		</body>
+
+</html>

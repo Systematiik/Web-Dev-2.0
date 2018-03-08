@@ -1,0 +1,67 @@
+<!doctype html>
+
+
+
+<html>
+	
+	<head>
+
+		<title>Javascript Circle</title>
+
+			<style>
+
+				#red{
+					background-color: red;
+				}
+
+				#blue{
+					background-color: blue;
+				}
+
+				#yellow{
+					background-color: yellow;
+				}
+
+					/*Creates a circle*/
+					.circle{
+						height:50px;
+						width:50px;
+						margin-right:10px;
+						border-radius:50%;
+						display:inline-block;
+					}
+
+			</style>
+
+	</head>
+
+		<body>
+
+			<p id="red" class="circle"></p>
+			<p id="blue" class="circle"></p>
+			<p id="yellow" class="circle"></p>
+
+				<script>
+
+					//Note to self, getting elements from a class is treated as an array
+
+					document.getElementsByClassName("circle")[0].onclick = function(){
+						document.getElementsByClassName("circle")[0].style.display = "none";
+
+					}
+
+					document.getElementsByClassName("circle")[1].onclick = function(){
+						document.getElementsByClassName("circle")[1].style.display = "none";
+
+					}
+
+					document.getElementsByClassName("circle")[2].onclick = function(){
+						document.getElementsByClassName("circle")[2].style.display = "none";
+
+					}
+
+				</script>
+
+		</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+
+<meta charset="UTF-8">
+
+<html>
+	
+	<head>
+
+		<title>Javascript For Loops</title>
+
+	</head>
+
+		<body>
+				<!--This div is used to contain the strings in the array-->
+				<b>These are the tweets:</b> <div id="tweetDiv"></div>
+
+					<script type="text/javascript">
+
+						var tweets = ["Hi everyone!", " I love cornflakes!", " Night night :)", "Sweet Dreams! :)"];
+
+						var tweetString = "";
+
+							for(var i = 0; i < tweets.length; i++){
+										
+								tweetString = tweetString + "<p>" + tweets[i] + "</p>";
+
+							}
+
+						document.getElementById("tweetDiv").style.color = "blue";
+						document.getElementById("tweetDiv").innerHTML = tweetString;
+
+					</script>
+
+		</body>
+
+</html>

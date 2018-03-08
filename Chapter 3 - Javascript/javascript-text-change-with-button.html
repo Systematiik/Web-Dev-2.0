@@ -1,0 +1,34 @@
+<!doctype html>
+
+
+
+<html>
+	
+	<head>
+
+		<title>Javascript</title>
+
+	</head>
+
+		<body>
+
+				<p id="text">Hello World!</p>
+
+				<button id="change_button">Change Text</button>
+
+				<script type="text/javascript">
+
+					//document: get something within the document
+					//getElementById: get element by Id
+					//"text": the id we want
+					//innerHTML: happens to be hello world, and then changed to "Hello Jeremy!"
+
+					document.getElementById("change_button").onclick = function(){
+						document.getElementById("text").innerHTML = "Hello Jeremy!";
+					}
+
+				</script>
+
+		</body>
+
+</html>
