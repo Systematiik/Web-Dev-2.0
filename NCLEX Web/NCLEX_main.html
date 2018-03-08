@@ -12,6 +12,9 @@
 		<!--References the external CSS within the same folder-->
 		<link rel="stylesheet" type="text/css" href="NCLEX_CSS.css">
 
+		<!--References the external Javascript within the same folder-->
+		<link rel="stylesheet" type="text/javascript" href="NCLEX_JS.js">
+
 	</head>
 	
 		<body>
@@ -21,6 +24,9 @@
 			<h1>Welcome to the NCLEX Quiz</h1>
 
 				<p>You will be given 10 questions to answer (randomly chosen from the NCLEX Practice Questions cue cards). Good luck!</p>
+
+				First Name: <input type="text" id="firstName" placeholder="Enter Your First Name"></input>
+				Last Name: <input type="text" id="lastName" placeholder="Enter Your Last Name"></input>
 
 			<hr>
 
@@ -38,12 +44,12 @@
 						<li>Breastfeeding must be supplemented.</li>
 					</ol>
 
-					<p>Answer: <select>
+					<p>Answer: <select id="question_one_answer">
 						<option disabled selected value style="display:none"></option>
-						<option className="q1-1">1</option>
-						<option className="q1-2">2</option>
-						<option className="q1-3">3</option>
-						<option className="q1-3">4</option>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
 					</select></p>
 
 					<p><a href="Question_1_(Q1).html" target="_blank">Click here for question 1 rationale.</a></p>
@@ -56,7 +62,7 @@
 
 				<h3>Question 2</h3>
 
-					<p>Which client is the best candidate for fenofibrate (TRICOR) to manage cholesterol and triglycerides and prevent a cardiac event></p>
+					<p>Which client is the best candidate for fenofibrate (TRICOR) to manage cholesterol and triglycerides and prevent a cardiac event?</p>
 
 					<ol type="1">
 						<li>A 47-year-old male with renal insufficiency.</li>
@@ -65,12 +71,12 @@
 						<li>A 75-year-old female taking atorvastatin (LIPITOR).</li>
 					</ol>
 
-					<p>Answer: <select>
+					<p>Answer: <select id="question_two_answer">
 						<option disabled selected value style="display:none"></option>
-						<option className="q2-1">1</option>
-						<option className="q2-2">2</option>
-						<option className="q2-3">3</option>
-						<option className="q2-4">4</option>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
 					</select></p>
 
 					<p><a href="Question_2_(Q41).html" target="_blank">Click here for question 2 rationale.</a></p>
@@ -86,7 +92,7 @@
 
 					<form>
 
-						<p>Answer: <input type="text" placeholder="Your Answer"></p>
+						<p>Answer: <input type="text" id="question_three_answer" placeholder="Your Answer"></p>
 
 					</form>
 
@@ -110,12 +116,12 @@
 						</ol>
 
 
-						<p>Answer: <select>
+						<p>Answer: <select id="question_four_answer">
 							<option select disabled selected value style="display:none"></option>
-							<option className="q4-1">1</option>
-							<option className="q4-2">2</option>
-							<option className="q4-3">3</option>
-							<option className="q4-4">4</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
 						</select></p>
 
 						<p><a href="Question_4_(Q73).html" target="_blank">Click here for question 4 rationale.</a></p>
@@ -138,12 +144,12 @@
 							<li>"Take with meals to reduce the risk of gastrointestinal side effects."</li>
 						</ol>
 
-					<p>Answer: <select>
+					<p>Answer: <select id="question_five_answer">
 						<option select disabled selected value style="display:none"></option>
-						<option className="q5-1">1</option>
-						<option className="q5-2">2</option>
-						<option className="q5-3">3</option>
-						<option className="q5-4">4</option>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
 					</select></p>
 
 					<p><a href="Question_5_(Q85).html" target="_blank">Click here for question 5 rationale.</a></p>
