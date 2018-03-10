@@ -6,6 +6,7 @@ body{
 				margin:0;
 			}
 				.box{
+                    padding-left: 5px;
 					border-style:solid;
 					border-width:0.5px;
 					border-radius:10px;
