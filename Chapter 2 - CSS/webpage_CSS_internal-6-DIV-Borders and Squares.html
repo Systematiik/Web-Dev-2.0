@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<!--Creating squares with borders-->
+
+<html>
+
+	<head>
+		<title>Web Dev 2.0 with CSS</title>
+
+		<style type="text/css">
+
+			.square{
+				width:100px;
+				height:100px;
+				margin:40px;
+				float:left;
+			}
+
+				#square_red{
+					background-color:red;
+					border-width:10px;
+					border-color:black;
+					border-style:solid;
+				}
+
+				#square_blue{
+					background-color:blue;
+					border-width:10px 2px 2px 1px;
+					border-color:black white pink red;
+					border-style:ridge solid dotted dashed;
+				}
+
+				/*Border radius can be used to create rounded edges or circles out of squares*/
+				#square_green{
+					background-color:green;
+					border-radius:50%;
+				}
+		</style>
+		
+	</head>
+
+	<body>
+		<div id="square_red" class="square">
+		</div>
+
+		<div id="square_blue" class="square">
+		</div>
+
+		<div id="square_green" class="square">
+		</div>
+	</body>
+
+</html>

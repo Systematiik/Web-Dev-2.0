@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<!--font-weight is used to bold
+font-style to italizise
+text-decoration is used to underline, strike, etc...
+text-align is used to align text
+
+links cannot be treated as text so if you want to align text use
+display: block; Which will treat the link as a block of itself that way
+it can be manipulated in terms of position
+
+Create classes to seperate text alignments, colours easier, etc...
+
+text-align justify is used to fill in a spot by stretching a sentence until
+it reaches the edge of the space it's contained in.-->
+
+<html>
+
+  <head>
+    
+    <title>Web Dev 2.0 with CSS</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+
+    <style type="text/css">
+
+      /*Used to give paragraph tags the font called "indie flower"*/
+      p{
+        /*font-family:"Times New Roman", Times, serif;*/
+        /*font-family: 'Libre Barcode 39', cursive*/
+        font-family: 'Indie Flower', cursive;
+        text-align: center;
+      }
+
+      /*Used to center a tags*/
+      a{
+        display: block;
+
+        color: red;
+        text-align: center;
+        text-decoration: none;
+      }
+
+      /*Hover pseudo class used on links. When mouse is hovered over the links
+        the link is then underlined*/
+      a:hover{
+        text-decoration: underline;
+        color: green;
+      }
+
+      /*Visited pseudo class is used on links. When the link has been visited,
+        the link's text is then changed to purple rather than it's original color*/
+      a:visited{
+        color: purple;
+      }
+
+        .big{
+          font-size: 200%;
+          color: red;
+        }
+
+        .bold{
+          font-weight: bold;
+        }
+
+        .italic{
+          font-style: italic;
+        }
+
+        .underlined{
+          text-decoration: underline;
+        }
+
+        .boldItalic{
+          font-weight: bold;
+          font-style: italic;
+        }
+
+    </style>
+
+  </head>
+
+    <body>
+      <p class="bold">This is bold text.</p>
+
+      <p class="italic">This is italic text. <br> <span class="bold"> This is bold and italic text.</span></p>
+
+      <p class="big">This text is big text.</p>
+
+      <p class="underlined">This text is underlined.</p>
+
+      <a href="This is a non-underlined link." target="_blank">(This is null)</a>
+
+    <br>
+
+    <!--When searching for links, insert https to tell your browser that you're not
+        looking for a relative link.-->
+      <a href="https://www.google.com" target="_blank">This is a link to google</a>
+
+    <br>
+    <hr>
+
+      <!--<p class="boldItalic">This is bold and italic text. </p>-->
+
+    <br>
+
+      <a href="https://fontawesome.com/icons?d=gallery" target="_blank">If you want some cool fonts for free, click here</a>
+
+    <body>
+
+</html>

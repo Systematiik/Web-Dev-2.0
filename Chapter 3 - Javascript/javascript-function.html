@@ -30,6 +30,9 @@
 
 					<script type="text/javascript">
 
+						document.getElementsByClassName("colorText")[0].style.color = "red";
+						document.getElementsByClassName("colorText")[1].style.color = "green";
+
 						function doAGuess(correctAnswer){
 							var randomInt = (Math.floor(Math.random() * 5) + 1);
 
@@ -39,9 +42,6 @@
 								return(false);
 							}
 						}
-
-							document.getElementsByClassName("colorText")[0].style.color = "red";
-							document.getElementsByClassName("colorText")[1].style.color = "green";
 
 							document.getElementById("checkAnswer").onclick = function(){
 
