@@ -1,0 +1,13 @@
+.headerText{
+					font-size: 40px;
+					font-weight: bold;
+					margin: 0;
+				}
+
+				#shape{
+					width: 200px;
+					height: 200px;
+					display: none;
+
+					position: relative;
+				}

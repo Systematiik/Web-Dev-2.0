@@ -54,37 +54,7 @@
 
 			<div id="shape"></div>
 
-				<script type="text/javascript">
-
-					var start = new Date().getTime();
-
-						function shapeAppear(){
-
-							document.getElementById("shape").style.display = "block";
-
-							start = new Date().getTime();
-						}
-
-						function appearAfter(){
-							setTimeout(shapeAppear, Math.random() * 2000);
-						}
-
-						appearAfter();
-
-						document.getElementById("shape").onclick = function (){
-
-							document.getElementById("shape").style.display = "none";
-
-							var end = new Date().getTime();
-
-							var timeTaken = (end - start) / 1000;
-
-							document.getElementById("timeSeconds").innerHTML = timeTaken + "<b> s</b>";
-
-							appearAfter();
-						}
-
-				</script>
+				<script type="text/javascript" src="javascript-reaction-test-game-JS.js"></script>
 
 		</body>
 
