@@ -26,20 +26,7 @@
 					background-color: red;
 					display: none;
 				}
-				/*.circle{
-					width:25px;
-					height:25px;
-					background-color: red;
-					border-radius: 50%;
-					display:inline-block;
-				}
 
-				.square{
-					width:25px;
-					height:25px;
-					background-color: blue;
-					display:inline-block;
-				}*/
 			</style>
 
 	</head>
@@ -54,7 +41,43 @@
 
 			<div id="shape"></div>
 
-				<script type="text/javascript" src="javascript-reaction-test-game-JS.js"></script>
+				<script type="text/javascript">
+
+				alert("Welcome to the Test Reaction Red Square Game. The time to beat is 0.11 seconds. If you can beat it than you're an animal.");
+
+					var start = new Date().getTime();
+
+						function shapeAppear(){
+
+							document.getElementById("shape").style.display = "block";
+
+							start = new Date().getTime();
+						}
+
+						function appearAfter(){
+							setTimeout(shapeAppear, Math.random() * 2000);
+						}
+
+						appearAfter();
+
+						document.getElementById("shape").onclick = function (){
+
+							document.getElementById("shape").style.display = "none";
+
+							var end = new Date().getTime();
+
+							var timeTaken = (end - start) / 1000;
+
+							document.getElementById("timeSeconds").innerHTML = timeTaken + "<b> s</b>";
+
+							if(timeTaken < 0.11){
+								alert("You are super fast! Faster than Jeremy the Great! You got " + timeTaken + ".");
+							}
+
+							appearAfter();
+						}
+
+				</script>
 
 		</body>
 
