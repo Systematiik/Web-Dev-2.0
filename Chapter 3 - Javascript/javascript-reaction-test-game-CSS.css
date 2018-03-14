@@ -1,4 +1,7 @@
-.headerText{
+                body{
+                    font-family: sans-serif;
+                }
+                .headerText{
 					font-size: 40px;
 					font-weight: bold;
 					margin: 0;

@@ -13,9 +13,9 @@
 	</head>
 
 		<body>
-
 				<p class="colorText"><b><u>*How many fingers am I holding up? (While 1<sup>st</sup> Edition)</u>*</b></p>
 
+				<!--This is a drop down box for the user to choose an option between 1 to 5-->
 				<select id="userInput" display="none">
 					<option disabled selected value style="display:none"></option>
 					<option>1</option>
@@ -32,12 +32,17 @@
 
 					<script type="text/javascript">
 
+						//these are used to change the text color of the items contained in the colorText class
 						document.getElementsByClassName("colorText")[0].style.color = "red";
 						document.getElementsByClassName("colorText")[1].style.color = "green";
 
+						//when the check answer button is clicked, this code evaluates the user's choice in the drop box and tells you how many times it took the code to get the right answer
 						document.getElementById("checkAnswer").onclick = function(){
 
+							//this is used to get the value of the user input into a variable
 							var userGuess = document.getElementById("userInput").value;
+
+							//this is used as a counter to find the number of guesses it took the code to match with the number
 							var numberOfGuesses = 1;
 							var gotIt = false;
 
