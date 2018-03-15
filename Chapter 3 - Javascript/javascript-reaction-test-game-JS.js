@@ -1,4 +1,4 @@
-                    var start = new Date().getTime();
+          var start = new Date().getTime();
 
 					function getRandomColor() {
 					  var letters = '0123456789ABCDEF';
