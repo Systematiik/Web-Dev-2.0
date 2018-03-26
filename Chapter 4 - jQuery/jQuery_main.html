@@ -2,29 +2,67 @@
 
 	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
 
+	<!-- 
+
+		This code is used in script and it's used to check whether the jQuery library was installed correctly
+
+			if(typeof jQuery == "undefined"){
+
+							alert("jQuery is not installed");
+
+						} else {
+							alert("jQuery is installed correctly");
+						}
+	-->
+
 <html>
 
 	<head>
 
 		<title>jQuery</title>
 
-			<script src="jquery.min.js"></script>
+			<script type="text/javascript" src="jquery.min.js"></script>
+
+				<style type="text/CSS">
+
+					#circle{
+						width: 150px;
+						height: 150px;
+						border-radius: 50%;
+
+						background-color: green;
+
+						margin: 10px;
+					}
+
+						.square{
+							width: 150px;
+							height: 150px;
+
+							background-color: red;
+
+							margin: 10px;
+						}
+
+				</style>
 
 	</head>
 
 		<body>
 
-			<script type="text/javascript">
+			<div id="circle"></div>
+			<div class="square"></div>
+			<div class="square"></div>
 
-				if(typeof jQuery == "undefined"){
+				<script type="text/javascript">
 
-					alert("jQuery is not installed");
+					$("div").click(function(){
 
-				} else {
-					alert("jQuery is installed correctly");
-				}
+						alert("A div was clicked.")
 
-			</script>
+					});
+
+				</script>
 
 		</body>
 
