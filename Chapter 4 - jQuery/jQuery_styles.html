@@ -19,7 +19,7 @@
 
 	<head>
 
-		<title>jQuery Main</title>
+		<title>jQuery Styles</title>
 
 			<script type="text/javascript" src="jquery.min.js"></script>
 
@@ -36,14 +36,13 @@
 					}
 
 						.square{
-							width: 150px;
-							height: 150px;
+						width: 150px;
+						height: 150px;
 
-							background-color: red;
+						background-color: red;
 
-							margin: 10px;
-						}
-
+						margin: 10px;
+					}
 				</style>
 
 	</head>
@@ -56,10 +55,15 @@
 
 				<script type="text/javascript">
 
-					$("div").click(function(){
+					$("div").click(function() {
+						$(this).css("display", "none");
 
-						alert("A div was clicked.")
+						if($(this).attr("id") == "circle"){
 
+						alert("The shape that disappeared was a circle.");			
+					} else {
+						alert("You shape that disappeared was a square.");
+					}
 					});
 
 				</script>
