@@ -1,0 +1,98 @@
+<!doctype html>
+
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+
+	<!-- 
+
+		This code is used in script and it's used to check whether the jQuery library was installed correctly
+
+			if(typeof jQuery == "undefined"){
+
+							alert("jQuery is not installed");
+
+						} else {
+							alert("jQuery is installed correctly");
+						}
+
+		This is used to fade in text, and fade out hidden text
+
+			$("#pFade").click(function(){
+						$("#text").fadeOut("slow");
+					});
+
+					$("#pFadeIn").click(function(){
+						$("#hiddenText").fadeIn("slow");
+					});
+	-->
+
+<html>
+
+	<head>
+
+		<title>jQuery Fade</title>
+
+			<script type="text/javascript" src="jquery.min.js"></script>
+
+				<style type="text/CSS">
+
+					#textFaded{
+						display: none;
+					}
+					
+				</style>
+
+	</head>
+
+		<body>
+
+				<p id="text">Fade me out.</p>
+				<p id="textFaded">I'm faded.</p>
+				<button id="toggleText">Toggle</button>
+
+				<script type="text/javascript">
+
+					//Boolean to determine whether text is shown
+					var textShowing = true;
+
+					//Fades in original text and removes "I'm faded" text instantly
+					function fadeInOrig(){
+						$("#textFaded").css("display", "none");
+						$("#text").fadeIn("slow");
+					}
+
+					//A set timer to reset the text in the document
+					function fadeReset(){
+						setTimeout(fadeInOrig, 1000);
+					}
+
+					$("#toggleText").click(function(){
+
+						//if text is shown on the screen, the text will fade out
+						//otherwise, it will fade in
+						if(textShowing){
+
+							$("#text").fadeOut(function(){
+								//callback to make sure the code sets textShowing to false
+								textShowing = false;
+							});
+
+							$("#textFaded").fadeOut(function(){
+								//callback to make sure the code sets textShowing to false
+								textShowing = false;
+							});
+
+						} else {
+							
+							$("#textFaded").fadeIn(function(){
+								//callback to make sure the code sets textShowing back to true
+								textShowing = true;
+								fadeReset();
+							});
+						}
+					});
+
+				</script>
+
+		</body>
+
+</html>
