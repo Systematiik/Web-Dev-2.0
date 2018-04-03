@@ -29,6 +29,8 @@
 
 	<head>
 
+		<meta charset="UTF-8">
+
 		<title>jQuery Fade</title>
 
 			<script type="text/javascript" src="jquery.min.js"></script>
@@ -37,7 +39,26 @@
 
 					#textFaded{
 						display: none;
+						color: green;
 					}
+
+					#whiteText{
+						display: none;
+						color: white;
+					}
+
+						.box{
+							width:85px;
+							height:85px;
+							padding: 10px;
+							border-width: 2px;
+							border-style: solid;
+							margin-left:100px;
+							margin-top:100px;
+						}
+							strong{
+								color: green;
+							}
 					
 				</style>
 
@@ -45,14 +66,23 @@
 
 		<body>
 
+			<div class="box">
 				<p id="text">Fade me out.</p>
-				<p id="textFaded">I'm faded.</p>
-				<button id="toggleText">Toggle</button>
+				<p id="textFaded"><i>I'm faded.</i></p>
+				<p id="whiteText">Fade me out.</p>
+				<button id="toggleText"><i>Toggle</i></button>
+			</div>
 
 				<script type="text/javascript">
 
 					//Boolean to determine whether text is shown
 					var textShowing = true;
+
+					function replaceOrig(){
+						$("#whiteText").css("display", "block")
+								//callback to make sure the code sets textShowing to false
+								textShowing = false;
+					}
 
 					//Fades in original text and removes "I'm faded" text instantly
 					function fadeInOrig(){
@@ -74,6 +104,7 @@
 							$("#text").fadeOut(function(){
 								//callback to make sure the code sets textShowing to false
 								textShowing = false;
+								replaceOrig();
 							});
 
 							$("#textFaded").fadeOut(function(){
@@ -83,6 +114,10 @@
 
 						} else {
 							
+							//This is used a placeholderso that the "Toggle" button isn't moved up when
+							//...the original text disappears
+							$("#whiteText").css("display", "none")
+
 							$("#textFaded").fadeIn(function(){
 								//callback to make sure the code sets textShowing back to true
 								textShowing = true;
