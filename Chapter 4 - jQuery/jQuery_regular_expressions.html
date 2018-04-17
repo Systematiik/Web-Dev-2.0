@@ -31,18 +31,13 @@
 
 		<meta charset="UTF-8">
 
-		<title>jQuery Animating Content</title>
+		<title>jQuery Regular Expressions</title>
 
 			<script type="text/javascript" src="jquery.min.js"></script>
 
 				<style type="text/CSS">
 
-					#circle{
-						width: 150px;
-						height: 150px;
-						border-radius: 50%;
-						background-color: green;
-					}
+					
 
 				</style>
 
@@ -50,22 +45,17 @@
 
 		<body>
 
-				<div id="circle"></div>
-
 				<script type="text/javascript">
 
-					$("#circle").click(function(){
-						$(this).animate({
-							width:"400px",
-							height:"400px",
-							marginLeft: "100px",
-							marginTop: "100px"
-							}, 
-							2000, function(){
-								$(this).css("background-color", "red");
-								});
-					});
+					//placing an i after the forward slash in the regex variable will create a case insensitive search which will allow the search to find all words disregarding the cases in letters
+					//placing a g means global meaning that it was find all strings being called
+					var regex = /IS/i;
+					var string = "Regex iS great!";
 					
+					//using the match function will match words from regex to the string 
+					var result = string.match(regex);
+
+					alert(result);
 				</script>
 
 		</body>
