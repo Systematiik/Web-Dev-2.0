@@ -1,55 +1,198 @@
 <!doctype html>
 
-<!-- -->
+<!--This code is a sign up sheet that prompts the user to input an email address, telephone number, and password.
+The user will need to confirm the password as well. The code will inform the user if anything is missing or if information is invalid.-->
 
 <html>
+		<meta charset="utf-8"/>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
   <head>
 
-  	<title>jQuery Mini Project</title>
+	<title>jQuery Mini Project</title>
+	  
   	<script type="text/javascript" src="jquery.min.js"></script>
 
-  		<style type="text/css">
+		  <style type="text/css">
+		  	#errorMessage{
+				color: red;
+				margin-left: 100px;
+			}
+
+			#successfulMessage{
+				color:green;
+				margin-left: 175px;
+			}
+			
   			#wrapper{
-  				width:500px;
-  				margin: 0 auto;
+  				width:550px;
+  				margin: 10% auto;
+				padding-left: 10px;
+				background-color: lightgrey;
+				border-radius: 5px;
+				border: 1px solid black;
   			}
+
+			#submitButton{
+				width: 130px;
+				margin-left: 200px;
+			}
 
 	  			body{
 	  				font-family: helvetica, sans-serif;
-	  				font-size: 200%;
+	  				font-size: 130%;
+					background-color: whitesmoke;
 	  			}
 
 	  			input{
 	  				width:320px;
 	  				padding: 5px 5px 12px 5px;
-	  				font-size: 25px;
+	  				font-size: 20px;
 	  				border-radius: 5px;
 	  				border: 1px solid grey;
 	  			}
 
 	  			label{
 	  				position: relative;
-	  				top: 4px;
+	  				top: 13px;
+					width: 200px;
+					float: left;
 	  			}
-  		</style>
 
+					.form-element{
+						margin-bottom: 10px;
+					}
+
+					.title{
+						margin-top: 10px;
+						margin-left: 50px;
+					}
+
+  		</style>
   </head>
 
     <body>
-
     	<div id="wrapper">
 
-		    <label form="email">Email: </label>
-		   	<input type="text" name="email" id="email" placeholder="e.g zoha.m@gmail.com">
+			<h1 class="title">jQuery Sign-Up Sheet</h1>
 
+			<!--This div is used to input all the error messages found in the script-->
+			<div id="errorMessage"></div>
 
-		    <label form="telephone">Telephone: </label>
-		   	<input type="text" name="telephone" id="telphone" placeholder="e.g (905)-xxx-xxxx">
+			<!--This div is used to inform the user that the sign up was successful without error-->
+			<div id="successfulMessage"></div>
+
+			<!--Email form-->
+			<div class="form-element">
+
+				<label form="email">Email: </label>
+				<input type="text" name="email" id="email" placeholder="e.g zoha.m@gmail.com">
+
+			</div>
+
+			<!--Telephone form-->
+			<div class="form-element">
+
+				<label form="telephone">Telephone: </label>
+				<input type="text" name="phone" id="phone" placeholder="e.g (905)-xxx-xxxx">
+				
+			</div>
+
+			<!--Password form-->
+			<div class="form-element">
+
+				<label form="password">Password: </label>
+				<input type="password" name="password" id="password">
+					
+			</div>
+
+			<!--Confirnm password form-->
+			<div class="form-element">
+
+				<label form="passwordConfirm">Confirm Password: </label>
+				<input type="password" name="passwordConfirm" id="passwordConfirm">
+					
+			</div>
+
+			<!--Submit form-->
+			<div class="form-element">
+
+				<input type="submit" id="submitButton" value="Sign Up">
+					
+			</div>
 
 	   </div>
 
-   			<script type="text/javascript">
-    		</script>
+			<script type="text/javascript">
 
+				//This function is used determine whether the user has inputted a valid email address aka;
+				//if there is an @ symbol and a ".", "com", "co", etc...
+				function isEmail(email) {
+ 					var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+ 					return regex.test(email);
+				}
+				
+				//When the sign up button is clicked, a series of booleans occur
+				$("#submitButton").click(function(){
+					var errorMessage = "";
+					var successfulMessage = "<p>Sign up is complete!</p>";
+					var fieldMissing = "";
+					
+					//If the email text field is empty, field missing adds the word email
+					if($("#email").val() == ""){
+
+						fieldMissing += "<p>Email</p>";
+					}
+
+					//If the email text field is empty, field missing adds the word phone
+					if($("#phone").val() == ""){
+
+						fieldMissing += "<p>Phone</p>";
+					}					
+					
+					//If the email text field is empty, field missing adds the word password
+					if($("#password").val() == ""){
+
+						fieldMissing += "<p>Password</p>";
+					}
+					
+					//If the email text field is empty, field missing adds the word Confirm Password
+					if($("#passwordConfirmed").val() == ""){
+
+						fieldMissing += "Confirm Password";
+					}
+
+						//If any fields are missing, this will append all the missing fields into the error message
+						if(fieldMissing != ""){
+							errorMessage += "<p>The following field(s) are missing: </p>" + fieldMissing;
+						}
+
+							//This checks if the user entered a valid email address
+							if (isEmail($("#email").val()) == false) {
+
+								errorMessage += "<p>Your email address is not valid. </p>";
+							}
+							
+							//This checks if the phone number is numeric
+							if ($.isNumeric($("#phone").val()) == false) {
+
+								errorMessage += "<p>Your phone number is not numeric. </p>";
+							}
+							
+							//This checks if the password and the confirmation password match
+							if($("password").val() != $("passwordConfirmed").val()){
+
+								errorMessage += "<p>The passwords do not match.</p>"
+							}
+							
+							//This appends all of the 
+							if(errorMessage != ""){
+								$("#errorMessage").html(errorMessage);
+							} else {
+								$("#successfulMessage").html(successfulMessage);
+							}
+				});
+    		</script>
     </body>
 </html>
