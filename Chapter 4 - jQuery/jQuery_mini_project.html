@@ -12,17 +12,21 @@ The user will need to confirm the password as well. The code will inform the use
 
 	<title>jQuery Mini Project</title>
 	  
-  	<script type="text/javascript" src="jquery.min.js"></script>
+	  <script type="text/javascript" src="jquery.min.js"></script>
+	  <script type="text/javascript" src="jquery-ui/jquery.min.js"></script>
+	  <link href="jquery-ui/jquery-ui.css" rel="stylesheet">
 
 		  <style type="text/css">
 		  	#errorMessage{
 				color: red;
 				margin-left: 100px;
+				font-size: 100% !important;
 			}
 
 			#successfulMessage{
 				color:green;
 				margin-left: 175px;
+				font-size: 90%;
 			}
 			
   			#wrapper{
@@ -37,6 +41,17 @@ The user will need to confirm the password as well. The code will inform the use
 			#submitButton{
 				width: 130px;
 				margin-left: 200px;
+			}
+
+			#draggable{
+				width: 50px;
+				height: 50px;
+				background-color: rgb(0, 174, 255);
+				font-size: 50%;
+				border-style: solid;
+				border-width: 2px;
+				border-color:dodgerblue;
+				padding: 5px;
 			}
 
 	  			body{
@@ -186,11 +201,13 @@ The user will need to confirm the password as well. The code will inform the use
 								errorMessage += "<p>The passwords do not match.</p>"
 							}
 							
-							//This appends all of the 
+							//This appends all of the error messages to the div in the body
+							//If successful message is shown, error message is then removed
 							if(errorMessage != ""){
 								$("#errorMessage").html(errorMessage);
 							} else {
 								$("#successfulMessage").html(successfulMessage);
+								$("#errorMessage").html("");
 							}
 				});
     		</script>

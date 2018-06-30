@@ -1,0 +1,36 @@
+<!doctype html>
+
+<html>
+
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script src="jquery-ui/jquery-ui.js"></script>
+    <link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+
+    <title>JQuery UI - Draggable</title>
+
+    <head>
+        <style type="text/CSS">
+            #draggable{
+                        width: 50px;
+                        height: 25px;
+                        background-color: rgb(0, 174, 255);
+                        font-size: 75%;
+                        border-style: solid;
+                        border-width: 2px;
+                        border-color:dodgerblue;
+                        padding: 5px;
+                    }
+        </style>
+    </head>
+
+    <body>
+        <div id="draggable">Drag me!</div>
+
+        <script type="text/javascript">
+            //This allows #draggable to be draggable vertically
+            //$("#draggable").draggable({ axis: "y" });
+            $("#draggable").draggable();
+        </script>
+
+    </body>
+</html>
