@@ -1,0 +1,47 @@
+<!doctype html>
+
+<html>
+
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script src="jquery-ui/jquery-ui.js"></script>
+    <link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+
+    <title>JQuery UI - Accordion and Sortables</title>
+
+    <head>
+        <style type="text/CSS">
+
+        </style>
+    </head>
+
+    <body>
+        <div id="accordion">
+            <h3>Section 1</h3>
+            <div><p>This is section one of the accordion.</p></div>
+
+            <h3>Section 2</h3>
+            <div><p>This is section two of the accordion.</p></div>
+
+            <h3>Section 3</h3>
+            <div><p>This is section three of the accordion.</p></div>
+
+            <h3>Section 4</h3>
+            <div><p>This is section four of the accordion.</p></div>
+        </div>
+
+            <ul id="sortable">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+                <li>Item 4</li>
+                <li>Item 5</li>
+            </ul>
+
+        <script type="text/javascript">
+            $("#accordion").accordion();
+            $("#sortable").sortable();
+            $("#sortable").disableSelection();
+        </script>
+
+    </body>
+</html>
