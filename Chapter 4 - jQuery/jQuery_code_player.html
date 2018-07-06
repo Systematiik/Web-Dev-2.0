@@ -1,0 +1,185 @@
+<!doctype html>
+
+<html>
+
+	<!--These are used to link the jQuery libraries necessary for scripting and styling-->
+	<script type="text/javascript" src="jquery.min.js"></script>
+    <script src="jquery-ui/jquery-ui.js"></script>
+    <link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+
+	<!--These are used to make this page both pc and mobile friendly-->
+	<meta charset="utf-8">
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, intial-scale=1">
+
+
+    <title>jQuery Code Player</title>
+
+    <head>
+		<style type="text/css">
+			body{
+				font-family: sans-serif;
+				padding: 0;
+				margin: 0;
+			}
+
+			iframe{
+				border: none;
+			}
+
+			textarea{
+				width: 50%;
+				height: 100%;
+				border-top: none;
+				border-color: grey;
+				resize: none;
+			}
+
+				#buttonContainer{
+					width: 300px;
+					margin: 0 auto; /*used to center content*/
+				}
+
+				#header{
+					width: 99.3%;
+					background-color: #EEEEEE;
+					padding: 5px;
+					height: 32px;
+				}
+
+				#html{
+					border-top-left-radius: 4px;
+					border-bottom-left-radius: 4px;
+				}
+
+				#output{
+					border-top-right-radius: 4px;
+					border-bottom-right-radius: 4px;
+					border-right: 1px solid grey;
+				}
+
+
+				#logo{
+					float:left;
+					font-weight: bold;
+					font-size: 120%;
+					padding: 5px 5px;
+				}
+					.helpButton{
+						float: right;
+						border: 1px solid grey;
+						padding: 6px;
+						border-top-left-radius: 4px;
+						border-bottom-left-radius: 4px;
+						border-top-right-radius: 4px;
+						border-bottom-right-radius: 4px;
+					}
+
+					.toggleButton{
+						float: left;
+						border: 1px solid grey;
+						padding: 6px;
+						border-right: none;
+					}
+					.active{
+						background-color: #E8F2FF;
+					}
+					
+					.hidden{
+						display: none;
+					}
+
+					.highlightedButton{
+						background-color: grey;
+					}
+
+					.panel{
+						width:50%;
+						border-left: none;
+						float: left;
+					}
+		</style>
+	</head>
+
+	<body>
+
+		<!--This div contains anything within the header such as the buttons and logo-->
+		<div id="header">
+			<div id="logo">Code Player</div>
+
+			<div id="buttonContainer">
+				<div id="html" class="toggleButton active">HTML</div>
+				<div id="css" class="toggleButton">CSS</div>
+				<div id="javascript" class="toggleButton">Javascript</div>
+				<div id="output" class="toggleButton active">Output</div>
+			</div>
+
+			<div id="help" class="helpButton">Help</div>
+		</div>
+
+		<!--This div contains anything below the header-->
+		<div id="bodyContainer">
+			<textarea id="htmlPanel" class="panel"><p id="paragraph">Hello World!</p></textarea>
+			<textarea id="cssPanel" class="panel hidden">#paragraph { color: green; }</textarea>
+			<textarea id="javascriptPanel" class="panel hidden">document.getElementById("paragraph").innerHTML = "Hello Jeremy!";</textarea>
+			<iframe id="outputPanel" class="panel"></iframe>
+		</div>
+
+		<script type="text/javascript">
+
+			//This function is used to update information created on the page in real time
+			function updateOutput(){
+				$("iframe").contents().find("html").html("<html><head><style type='text/css'>" 
+				+ $("#cssPanel").val() + "</style></head><body>" + $("#htmlPanel").val()
+				+ "</body></html>");
+
+				document.getElementById("outputPanel").contentWindow.eval($("#javascriptPanel").val());
+			}
+
+			//When a button a button is being hovered, it changes colors and goes back to normal when not being hovered
+			$(".toggleButton").hover(function(){
+				$(this).addClass("highlightedButton")
+			}, function(){
+				$(this).removeClass("highlightedButton");
+			});
+
+			//When a button is selected, it changes the color of the button to blue
+			//It also divides the page into sections depending on which buttons are selected
+			$(".toggleButton").click(function(){
+				$(this).toggleClass("active");
+				$(this).removeClass("highlightedButton");
+				var panelId = $(this).attr("id") + "Panel";
+				
+				$("#" + panelId).toggleClass("hidden");
+
+				//Divides the page in the number of panels in correspondence to the number of unselected panels
+				var numOfActivePanels = 4 - ($(".hidden").length);
+
+				//Gives enough space for each panel to exist
+				$(".panel").width(($(window).width() / numOfActivePanels) - 5);
+			});
+			
+			$(".helpButton").hover(function(){
+				$(this).addClass("highlightedButton")
+			}, function(){
+				$(this).removeClass("highlightedButton");
+			});
+
+			$(".helpButton").click(function(){
+				alert("When altering the html in javascript. The html intially created will be overwritten by the javascript.");
+			});
+
+			//This makes sure that each panel uses up the size of the page effectively
+			//In other words, a size so that the user doesn't have to scroll up or down
+			$(".panel").height($(window).height() - $("#header").height() - 20);
+			$(".panel").width(($(window).width() / 2) - 10);
+
+			updateOutput();
+			
+			
+			$("textarea").on('change keyup paste', function(){
+				updateOutput();
+			});
+		</script>
+	</body>
+</html>
