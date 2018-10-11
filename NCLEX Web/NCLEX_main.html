@@ -34,7 +34,7 @@
 			<hr>
 
 			<!--Question Number One-->
-			<div id="question_one" class="box">
+			<div id="question_one" id="question" class="box">
 
 				<h3>Question 1</h3>
 
@@ -160,9 +160,7 @@
 
 			<hr>
 
-			<!--(WIP)-->
-
-				<p>When you are ready, click here to Evaluate: (It doesn't do anything yet)</p> <button id="evaluateButton">Evaluate</button>
+				<p>When you are ready, click here to Evaluate:</p> <button id="evaluateButton">Evaluate</button>
 
 			<hr>
 
@@ -177,6 +175,24 @@
 			-->
 
 			<script type="text/javascript">
+			var findFName = $("#firstName").val();
+			var findLName = $("#lastName").val();
+
+			function getName(){
+				$(findFName).contents().find("html").html("<html><head><style type='text/css'>" 
+				+ findFName
+				+ findLName
+				+ "</style></head>"
+				+ "<body></body></html>");
+			}
+
+				$("#evaluateButton").click(function(){
+					alert("Congratulations on completing the NCLEX Quiz.\n"
+					+ "First Name: " + $("#firstName").val(findFName) + "\n"
+					+ "Last Name: " + $("#lastName").val(findLName))
+				});
+
+
 			</script>
 
 		</body>

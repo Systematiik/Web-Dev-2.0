@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+
+<!--These are used to link the jQuery libraries necessary for scripting and styling-->
+<script type="text/javascript" src="jquery.min.js"></script>
+<script src="jquery-ui/jquery-ui.js"></script>
+<link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+
+<!--These are used to make this page both pc and mobile friendly-->
+<meta charset="utf-8">
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, intial-scale=1">
+
+    <head>
+        <title>Music Player</title>
+            <style type="text/css">
+            #header{
+                margin: 0 auto;
+                float: left;
+                color:powderblue;
+            }
+
+            #iFrame{
+                margin: 0 auto;
+                margin-bottom: 70px;
+                width: 75%;
+                height: 25%;
+                float: left;
+            }
+            
+            #fileDrop{
+                margin: 0 auto;
+                float: left;
+            }
+
+            #pleaseDrop{
+                color: turquoise;
+            }
+
+                .wrapper{
+                    width: 550px;
+                    height: 425px;
+                    margin: 10% auto;
+                    padding-left: 10px;
+                    background-color: whitesmoke;
+                    border-radius: 5px;
+                    border: 1px solid black;
+                }
+
+                    textarea{
+                        margin: 0 auto;
+                        margin-top: -10px;
+                        resize: none;
+                    }
+
+                    body{
+                        background-color: salmon;
+                    }
+            </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div id="header"><h1>Music Player</h1></div>
+            <br</br>
+            <div id="iFrame"><iframe></iframe></div>
+
+            <div id="fileDrop">
+                <div id="pleaseDrop"><p><strong>Please drop music file here: </strong></p></div>
+                <div id="dropBox"><textarea></textarea></div>
+                <hr>
+                <p>Or choose a file from your computer. </p>
+                <div id="chooseButton"><button type="submit">Choose</button><span id="fileNotChosen">No file has been chosen.<span></span></div>
+            </div>
+
+            <div id="musicInfo">
+                <div id="artist"></div>
+                <div id="songName"></div>
+            </div>
+            
+        </div>
+
+            <script type="text/javascript">
+            </script>
+    </body>
+</html>
